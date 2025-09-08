@@ -1,25 +1,22 @@
-/* =========================================================
-   Krishna Kumar — Portfolio
-   Beautiful, clean, and robust styles for the provided HTML.
-   Note: You can remove the <link rel="stylesheet" href="override.css">
-   from your HTML to avoid conflicts, this file is complete.
-   ========================================================= */
 
-/* ---------- Theme tokens ---------- */
 :root {
-  --bg: #0b1220;         /* Deep night */
-  --panel: #0f172a;      /* Card/Panel base */
-  --text: #e5e7eb;       /* Primary text */
-  --muted: #94a3b8;      /* Secondary text */
+  --bg: #0c1120;          /* Deep night */
+  --panel: #0f172a;       /* Panel/Card base */
+  --text: #e5e7eb;        /* Primary text */
+  --muted: #a3b1c6;       /* Secondary text */
 
-  --card: #0f172a;       /* Card background */
-  --border: rgba(255,255,255,0.08);
-  --shadow: 0 16px 48px rgba(2, 6, 23, 0.45);
+  --card: #101a2f;        /* Card background */
+  --border: rgba(255,255,255,0.10);
+  --shadow: 0 18px 60px rgba(2, 6, 23, 0.55);
 
-  --brand: #7c3aed;      /* Purple */
-  --brand-2: #22d3ee;    /* Cyan */
+  --brand: #7c3aed;       /* Purple */
+  --brand-2: #22d3ee;     /* Cyan */
   --accent1: #7c3aed;
   --accent2: #06b6d4;
+
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
 }
 
 /* Light theme (optional) */
@@ -32,7 +29,7 @@
 
     --card: #ffffff;
     --border: rgba(0,0,0,0.10);
-    --shadow: 0 10px 28px rgba(0,0,0,0.10);
+    --shadow: 0 14px 38px rgba(0,0,0,0.10);
   }
 }
 
@@ -46,18 +43,15 @@ body {
   margin: 0;
   min-height: 100%;
   color: var(--text);
-  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji");
 
-  /* Solid + soft glow gradients with subtle anti-banding noise */
+  /* Solid background (no banding), plus ultra-subtle vignette */
   background-color: var(--bg);
   background-image:
-    /* subtle noise to break banding */
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/></svg>"),
-    radial-gradient(1000px 600px at 8% -10%, rgba(124,58,237,.18), transparent 60%),
-    radial-gradient(1000px 560px at 100% 8%, rgba(34,211,238,.18), transparent 60%),
-    linear-gradient(180deg, #0b1220 0%, #0a1020 100%);
-  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
-  background-attachment: scroll, scroll, scroll, scroll; /* avoid fixed-layer artifacts */
+    radial-gradient(1200px 700px at 80% -10%, rgba(34,211,238,.08), transparent 60%),
+    radial-gradient(1200px 700px at 0% 0%, rgba(124,58,237,.06), transparent 60%);
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll, scroll;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -67,35 +61,46 @@ h1, h2, h3, h4 { margin: 0; }
 .container { width: min(1100px, calc(100% - 2rem)); margin-inline: auto; }
 section { padding: 3rem 0; }
 
+/* Anchor offsets for sticky header */
+[id] { scroll-margin-top: 84px; }
+
+/* ---------- Focus states (a11y) ---------- */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brand) 70%, #fff 30%);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
 /* ---------- Headings ---------- */
 h2 {
-  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
   font-weight: 800;
   letter-spacing: 0.2px;
   margin-bottom: 1.1rem;
   text-align: left;
+  color: #e8ecf4;
 }
 
-/* Underline these specific headings (Objective, Education, Technical Strengths) */
+/* Beautiful gradient underline for these headings only */
 #objective h2,
 #education h2,
 #technical-strengths h2 {
-  /* gradient underline without pseudo-elements: works reliably */
-  display: inline-block;                /* shrink underline to the text width */
-  padding-bottom: 8px;                  /* space for the underline */
+  display: inline-block;                  /* underline matches text width */
+  padding-bottom: 10px;                   /* space for underline */
   background-image: linear-gradient(90deg, var(--brand), var(--brand-2));
-  background-size: 100% 4px;            /* thickness of underline */
+  background-size: 100% 4px;              /* underline thickness */
   background-repeat: no-repeat;
   background-position: 0 100%;
 }
 
-/* If you also want Projects/Certifications/Interests/Contact underlined,
-   add their IDs to the selector above. */
+/* If you decide to underline all section headings, replace the selector above with: section h2 */
 
-/* A tidy subheading style used in Objective/Interests */
+/* Subheading copy */
 .lead {
-  font-size: 1.05rem;
-  color: #cbd5e1;
+  font-size: 1.06rem;
+  color: #cdd7e6;
   max-width: 70ch;
 }
 
@@ -103,34 +108,34 @@ h2 {
 .site-header {
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: saturate(130%) blur(8px);
-  background: color-mix(in srgb, var(--panel) 82%, transparent);
-  border-bottom: none;                  /* no harsh separator line */
+  background: color-mix(in srgb, var(--panel) 85%, transparent);
+  border-bottom: none; /* no harsh line */
 }
 
 .nav {
   display: flex; align-items: center; justify-content: space-between;
-  height: 60px;
+  height: 64px;
   padding: 0 .5rem;
 }
 
 .brand {
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: .2px;
   text-decoration: none;
 }
 
 .nav-list {
   list-style: none; margin: 0; padding: 0;
-  display: flex; gap: .8rem;
+  display: flex; gap: .6rem;
 }
 .nav-list a {
   text-decoration: none;
-  opacity: .9;
-  padding: .45rem .6rem;
-  border-radius: 10px;
+  opacity: .92;
+  padding: .48rem .68rem;
+  border-radius: var(--radius-sm);
   transition: opacity .2s ease, transform .2s ease, background-color .2s ease;
 }
-.nav-list a:hover { opacity: 1; transform: translateY(-1px); background-color: rgba(255,255,255,0.03); }
+.nav-list a:hover { opacity: 1; transform: translateY(-1px); background-color: rgba(255,255,255,0.04); }
 .nav-list a.cta { border: 1px solid var(--border); background: rgba(255,255,255,0.03); }
 
 /* ---------- Hero ---------- */
@@ -138,15 +143,15 @@ h2 {
 .hero .container { text-align: center; }
 
 .gradient-text {
-  font-size: clamp(2rem, 4.5vw + 1rem, 3.4rem);
-  line-height: 1.1;
+  font-size: clamp(2rem, 4.6vw + 1rem, 3.6rem);
+  line-height: 1.08;
   margin: 0;
   background: linear-gradient(90deg, var(--brand), var(--brand-2));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-.sub { color: var(--muted); margin-top: .5rem; }
+.sub { color: var(--muted); margin-top: .55rem; }
 
 .avatar-wrap { display: flex; justify-content: center; margin-bottom: .5rem; }
 .avatar {
@@ -170,34 +175,41 @@ h2 {
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: var(--radius-lg);
   padding: 1.1rem 1.1rem 1.2rem;
   box-shadow: var(--shadow);
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
 }
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 22px 50px rgba(2, 6, 23, 0.55);
+  box-shadow: 0 24px 58px rgba(2, 6, 23, 0.55);
   border-color: rgba(34,211,238,.35);
+  background: color-mix(in srgb, var(--card) 90%, #0e162c 10%);
 }
-.card h3 { margin: 0 0 .35rem; }
+.card h3 { margin: 0 0 .35rem; font-weight: 800; }
 .muted { color: var(--muted); margin: .25rem 0 .5rem; }
 .meta { display: flex; gap: .8rem; flex-wrap: wrap; color: var(--muted); font-size: .95rem; }
 
 /* ---------- Technical Strengths ---------- */
 .stack { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.stack-group h4 { margin: 0 0 .5rem; color: #dbeafe; font-weight: 700; }
+.stack-group h4 { margin: 0 0 .6rem; color: #dbeafe; font-weight: 800; }
 .chips {
-  display: flex; flex-wrap: wrap; gap: .5rem;
+  display: flex; flex-wrap: wrap; gap: .55rem;
   list-style: none; margin: 0; padding: 0;
 }
 .chips li {
   background: #0b1220;
   border: 1px solid var(--border);
   color: #dbeafe;
-  padding: .42rem .62rem;
+  padding: .46rem .68rem;
   border-radius: 999px;
   font-size: .92rem;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+.chips li:hover {
+  transform: translateY(-1px);
+  border-color: rgba(124,58,237,.35);
+  background: color-mix(in srgb, #0b1220 86%, var(--brand) 14%);
 }
 
 /* ---------- Projects ---------- */
@@ -210,18 +222,17 @@ h2 {
 #projects .project-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow);
   overflow: hidden;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
 }
 #projects .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 44px rgba(0,0,0,0.45);
+  box-shadow: 0 22px 52px rgba(0,0,0,0.50);
   border-color: rgba(6, 182, 212, 0.35);
 }
 
-/* Thumbnail with inset padding */
 #projects .project-thumb {
   position: relative;
   padding: 1rem;
@@ -236,7 +247,6 @@ h2 {
   background: #0b1220;
 }
 
-/* Date badge on the thumbnail */
 #projects .project-badge {
   position: absolute;
   right: 1.1rem;
@@ -252,8 +262,7 @@ h2 {
   white-space: nowrap;
 }
 
-/* Body */
-#projects .project-body { padding: .75rem 1rem 1.2rem; }
+#projects .project-body { padding: .75rem 1rem 1.15rem; }
 #projects .project-title {
   font-weight: 800;
   line-height: 1.35;
@@ -268,7 +277,7 @@ h2 {
 #projects .btn-outline {
   --btn-border: var(--border);
   --btn-fg: var(--text);
-  padding: .55rem 1rem;
+  padding: .56rem 1rem;
   border-radius: 999px;
   border: 1px solid var(--btn-border);
   color: var(--btn-fg);
@@ -299,7 +308,7 @@ h2 {
   padding: 1.5rem 0 2rem;
   color: var(--muted);
   text-align: center;
-  background: color-mix(in srgb, var(--panel) 82%, transparent);
+  background: color-mix(in srgb, var(--panel) 85%, transparent);
 }
 
 /* ---------- Reveal / Animations ---------- */
@@ -312,7 +321,7 @@ h2 {
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
   .nav-list { gap: .5rem; }
-  .nav-list a { padding: .4rem .5rem; }
+  .nav-list a { padding: .42rem .5rem; }
   .hero { padding-top: 2rem; }
   #projects .project-body { padding: .75rem .875rem 1rem; }
   #projects .project-title { font-size: 1rem; }
