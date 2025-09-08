@@ -115,7 +115,7 @@ h2::after {
 /* Project badge + buttons */
 .badge {
   display: inline-block; background: linear-gradient(90deg, var(--brand), var(--brand-2));
-  color: #0b1220; font-weight: 700; padding: .2rem .6rem; border-radius: .5rem; font-size: .8rem;
+  color: #0b1220; font-weight: 700; padding: .2rem .6rem; border-radius: .5rem; font-size: .7rem;
 }
 .actions { margin-top: .75rem; }
 .btn {
