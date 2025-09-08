@@ -323,3 +323,14 @@ h2 {
   .reveal { transition: none; transform: none; opacity: 1; }
   .btn, .card, .nav-list a, #projects .btn-outline { transition: none; }
 }
+#projects h2,
+#certifications h2,
+#interests h2,
+#contact h2 {
+  display: inline-block;
+  padding-bottom: 10px;
+  background-image: linear-gradient(90deg, var(--brand), var(--brand-2));
+  background-size: 100% 4px;   /* underline thickness */
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
