@@ -95,7 +95,21 @@ h2::after {
   box-shadow: 0 16px 42px rgba(2, 6, 23, 0.6);
   border-color: color-mix(in oklab, var(--brand) 40%, var(--border));
 }
-.card-head { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.card-head h3 {
+  margin: 0;
+  line-height: 1.2;
+  min-width: 0;           /* allows wrapping instead of overflow */
+}
+.card-head .badge {
+  margin-left: auto;      /* push badge to the right */
+  flex-shrink: 0;         /* keep badge size */
+  position: static;       /* override any absolute positioning */
+}
 .card h3 { margin: 0 0 .25rem; }
 .muted { color: var(--muted); margin: .25rem 0 .5rem; }
 
