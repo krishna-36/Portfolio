@@ -33,3 +33,20 @@ section h2::before, section h2::after,
 
 /* Hide any <hr> separators if present */
 hr { display: none !important; }
+/* Re-enable gradient underlines for specific sections */
+#objective h2::after,
+#objectives h2::after,
+#education h2::after,
+#skills h2::after,
+#projects h2::after,
+#certifications h2::after,
+#contact h2::after {
+  content: "" !important;            /* wins over any previous 'content: none' */
+  display: block !important;
+  height: 3px !important;
+  width: 64px !important;
+  margin-top: 8px !important;
+  border-radius: 3px !important;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2)) !important;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, .45) !important;
+}
