@@ -177,4 +177,4 @@ h2::after {
   object-fit: cover; background: #0b1220;
   border: 2px solid var(--border); box-shadow: var(--shadow);
 }
-@media (max-width: 640px) { .avatar { width: 128px; height: 128px; } }
+@media (max-width: 640px) { .avatar { width: 160px; height: 160px; } }
