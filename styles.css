@@ -86,7 +86,7 @@ h2::after {
 .two-col { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 
 .card {
-  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 18px;
   padding: 1.1rem 1.1rem 1.2rem; box-shadow: var(--shadow);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
@@ -173,7 +173,7 @@ h2::after {
 /* Avatar */
 .avatar-wrap { display: flex; justify-content: center; margin-bottom: 1rem; }
 .avatar {
-  width: 160px; height: 160px; border-radius: 50%;
+  width: 200px; height: 200px; border-radius: 50%;
   object-fit: cover; background: #0b1220;
   border: 2px solid var(--border); box-shadow: var(--shadow);
 }
