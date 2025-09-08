@@ -3,80 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Krishna Kuamr | Portfolio</title>
+  <meta name="description" content="Krishna Kumar - Computer Science Engineering student specializing in web development and machine learning. Explore my projects and skills.">
+  <meta name="keywords" content="Krishna Kumar, Computer Science, Web Development, Machine Learning, Portfolio, Student, Python, JavaScript">
+  <meta name="author" content="Krishna Kumar">
+  <meta property="og:title" content="Krishna Kumar | Portfolio">
+  <meta property="og:description" content="Computer Science Engineering student passionate about technology, web development, and machine learning.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="profile.jpg">
+  <title>Krishna Kumar | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <nav>
+  <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
       <h1>Krishna Kumar</h1>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#education">Education</a></li>
-      </ul>
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        ☰
+      </button>
+      <div class="nav-container">
+        <ul>
+          <li><a href="#about" aria-label="Go to About section">About</a></li>
+          <li><a href="#projects" aria-label="Go to Projects section">Projects</a></li>
+          <li><a href="#education" aria-label="Go to Education section">Education</a></li>
+          <li><a href="#skills" aria-label="Go to Skills section">Skills</a></li>
+          <li><a href="#contact" aria-label="Go to Contact section">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+          🌙
+        </button>
+      </div>
     </nav>
   </header>
 
-  <section id="hero">
-    <h2>Welcome to My Portfolio</h2>
-    <a href="#projects" class="btn">View Projects</a>
-    <a href="resume.pdf" class="btn">Resume</a>
-  </section>
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-container">
-      <img src="profile.jpg" alt="Krishna Sharma" class="profile-photo">
-      <p>
-        Hi, I'm Krishna Kumar, a 3rd-year Computer Science Engineering student with a passion for exploring the ever-evolving world of technology. My journey in programming began with C and Python, and I’ve been building skills in web development and machine learning 
-        ever since.
-        
-      </p>
-    </div>
-  </section>
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="about-container">
-    <div class="project">
-      <h3>Video Summarization Website</h3>
-      <p>A web app that summarizes videos into text format.</p>
-      <p><strong>Technologies:</strong> Python, Flask, HTML, CSS</p>
-      <a href="https://github.com/krishna-36/Video-Summarizer" target="_blank">GitHub</a>
-    </div>
-    <!-- Add more projects here -->
-  </section>
-  <section id="education">
-    <h2>Education</h2>
-    <div class="about-container">
-    <ul class="education-list">
-        <li>Bachelor of Engineering (Computer Science) - Vivekananda Engineering and Technology (Pursuing)</li>
-        <li>PUC (Science) -Indraprastha P.U College</li>
-        <li>SSLC - Vivekananda English Medium School</li>
-    </ul>
-</section>
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="about-container">
-    <div class="skills-container">
-        <div class="skill-card">C</div>
-        <div class="skill-card">Python</div>
-        <div class="skill-card">Java</div>
-        <div class="skill-card">C++</div>
-        <div class="skill-card">Machine Learning</div>
-        <div class="skill-card">Database Management</div>
-    </div>
-</section>
+  <main role="main">
+    <section id="hero" aria-labelledby="hero-heading">
+      <h2 id="hero-heading">Welcome to My Portfolio</h2>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn" aria-label="View my projects">View Projects</a>
+        <a href="resume.pdf" class="btn secondary" aria-label="Download my resume" target="_blank">Resume</a>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="about-container">
-    <p>Email: <a href="mailto:krishna189097@gmail.com">krishna189097@gmail.com</a></p>
-    <p>Phone: 7760443868</p>
-  </section>
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading">About Me</h2>
+        <div class="about-container">
+          <img src="profile.jpg" alt="Krishna Kumar - Computer Science Engineering student" class="profile-photo">
+          <p>
+            Hi, I'm Krishna Kumar, a 3rd-year Computer Science Engineering student with a passion for exploring the ever-evolving world of technology. My journey in programming began with C and Python, and I've been building skills in web development and machine learning ever since.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <footer>
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 id="projects-heading">Projects</h2>
+        <div class="about-container">
+          <div class="project">
+            <h3>Video Summarization Website</h3>
+            <p>A web app that summarizes videos into text format.</p>
+            <p><strong>Technologies:</strong> Python, Flask, HTML, CSS</p>
+            <a href="https://github.com/krishna-36/Video-Summarizer" target="_blank" rel="noopener noreferrer" aria-label="View Video Summarization Website on GitHub">GitHub</a>
+          </div>
+          <!-- Add more projects here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="education" aria-labelledby="education-heading">
+      <div class="container">
+        <h2 id="education-heading">Education</h2>
+        <div class="about-container">
+          <ul class="education-list">
+            <li>Bachelor of Engineering (Computer Science) - Vivekananda Engineering and Technology (Pursuing)</li>
+            <li>PUC (Science) - Indraprastha P.U College</li>
+            <li>SSLC - Vivekananda English Medium School</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 id="skills-heading">Skills</h2>
+        <div class="about-container">
+          <div class="skills-container" role="list" aria-label="Technical skills">
+            <div class="skill-card" role="listitem">C</div>
+            <div class="skill-card" role="listitem">Python</div>
+            <div class="skill-card" role="listitem">Java</div>
+            <div class="skill-card" role="listitem">C++</div>
+            <div class="skill-card" role="listitem">Machine Learning</div>
+            <div class="skill-card" role="listitem">Database Management</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading">Contact</h2>
+        <div class="about-container">
+          <p>Email: <a href="mailto:krishna189097@gmail.com" aria-label="Send email to krishna189097@gmail.com">krishna189097@gmail.com</a></p>
+          <p>Phone: <a href="tel:7760443868" aria-label="Call 7760443868">7760443868</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
     <p>© 2024 Krishna Kumar. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+    
+    // Check for saved theme preference or default to 'light'
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', currentTheme);
+    
+    // Update theme toggle button
+    function updateThemeToggle(theme) {
+      themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+      themeToggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
+    }
+    
+    updateThemeToggle(currentTheme);
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeToggle(newTheme);
+    });
+    
+    // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navContainer = document.querySelector('.nav-container');
+    
+    mobileMenuToggle.addEventListener('click', () => {
+      const isActive = navContainer.classList.contains('active');
+      navContainer.classList.toggle('active');
+      mobileMenuToggle.setAttribute('aria-expanded', !isActive);
+      mobileMenuToggle.textContent = isActive ? '☰' : '✕';
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-container a').forEach(link => {
+      link.addEventListener('click', () => {
+        navContainer.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.textContent = '☰';
+      });
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Add scroll animation for sections
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    
+    // Observe all sections for animation
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(20px)';
+      section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
