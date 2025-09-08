@@ -284,6 +284,3 @@ section h2::after {
   background: linear-gradient(90deg, var(--brand), var(--brand-2));
   box-shadow: 0 4px 16px rgba(124, 58, 237, .45);
 }
-section h2::after { content: none !important; display: none !important; }
-.site-header { border-bottom: none !important; }
-.site-footer { border-top: none !important; }
