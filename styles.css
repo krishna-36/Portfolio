@@ -38,13 +38,14 @@ html { height: 100%; scroll-behavior: smooth; }
 body {
   margin: 0;
   min-height: 100%;
-  /* fallback */
-  background: #0b1220;
-  /* glow layers (supported browsers will render these over the fallback) */
+  /* Anti-banding noise layer + glow gradients */
   background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/></svg>"),
     radial-gradient(900px 560px at 8% -10%, rgba(124,58,237,.18), transparent 60%),
     radial-gradient(900px 520px at 100% 8%, rgba(34,211,238,.18), transparent 60%),
     linear-gradient(180deg, #0b1220 0%, #0a1020 100%);
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: scroll, scroll, scroll, scroll; /* ensure no fixed layer artifacts */
   color: var(--text);
   font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
@@ -64,6 +65,9 @@ h2 {
 }
 section .container { text-align: left; }
 
+/* No heading underline */
+section h2::after { content: none; display: none; }
+
 /* Subheading paragraph style used in Objective/Interests */
 .lead {
   font-size: 1.05rem;
@@ -78,9 +82,9 @@ section .container { text-align: left; }
 .site-header {
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: saturate(130%) blur(8px);
-  background: rgba(15, 23, 42, 0.8); /* fallback */
+  background: rgba(15, 23, 42, 0.8);
   background: color-mix(in srgb, var(--panel) 80%, transparent);
-  border-bottom: 1px solid var(--border);
+  border-bottom: none; /* no line under header */
 }
 .nav {
   display: flex; align-items: center; justify-content: space-between;
@@ -205,12 +209,12 @@ section .container { text-align: left; }
 #projects .project-title {
   font-weight: 700;
   line-height: 1.35;
-  text-align: left;           /* left-align project titles */
+  text-align: left;
   margin-bottom: .875rem;
 }
 #projects .project-actions {
   display: flex; gap: .75rem;
-  justify-content: flex-start; /* left-align buttons */
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 #projects .btn-outline {
@@ -243,11 +247,11 @@ section .container { text-align: left; }
 
 /* ---------- Footer ---------- */
 .site-footer {
-  border-top: 1px solid var(--border);
+  border-top: none; /* no line above footer */
   padding: 1.5rem 0 2rem;
   color: var(--muted);
   text-align: center;
-  background: rgba(15, 23, 42, 0.8); /* fallback */
+  background: rgba(15, 23, 42, 0.8);
   background: color-mix(in srgb, var(--panel) 80%, transparent);
 }
 
@@ -272,15 +276,4 @@ section .container { text-align: left; }
   html { scroll-behavior: auto; }
   .reveal { transition: none; transform: none; opacity: 1; }
   .btn, .card, .nav-list a, #projects .btn-outline { transition: none; }
-}
-/* Underline for section headings (Objective, Education, etc.) */
-section h2::after {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 64px;
-  margin-top: 8px;
-  border-radius: 3px;
-  background: linear-gradient(90deg, var(--brand), var(--brand-2));
-  box-shadow: 0 4px 16px rgba(124, 58, 237, .45);
 }
