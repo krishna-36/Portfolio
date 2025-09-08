@@ -173,7 +173,7 @@ h2::after {
 /* Avatar */
 .avatar-wrap { display: flex; justify-content: center; margin-bottom: 1rem; }
 .avatar {
-  width: 200px; height: 200px; border-radius: 50%;
+  width: 300px; height: 300px; border-radius: 50%;
   object-fit: cover; background: #0b1220;
   border: 2px solid var(--border); box-shadow: var(--shadow);
 }
