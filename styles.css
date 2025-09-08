@@ -273,3 +273,14 @@ section .container { text-align: left; }
   .reveal { transition: none; transform: none; opacity: 1; }
   .btn, .card, .nav-list a, #projects .btn-outline { transition: none; }
 }
+/* Underline for section headings (Objective, Education, etc.) */
+section h2::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 64px;
+  margin-top: 8px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  box-shadow: 0 4px 16px rgba(124, 58, 237, .45);
+}
