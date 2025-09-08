@@ -2,159 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KRISHNA KUMAR — Portfolio/Resume</title>
-  <meta name="description" content="Resume and portfolio of Krishna Kumar: Objective, Education, Technical Strengths, Projects, Certifications, and Interests."/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Krishna Kumar — Portfolio</title>
+  <meta name="description" content="Portfolio and resume of Krishna Kumar: Objective, Education, Technical Strengths, Projects, Certifications, Interests, and Contact." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <nav aria-label="Primary">
-      <ul>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Home">Krishna Kumar</a>
+      <ul class="nav-list">
         <li><a href="#objective">Objective</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#technical-strengths">Technical Strengths</a></li>
+        <li><a href="#technical-strengths">Technical</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#certifications">Certs</a></li>
         <li><a href="#interests">Interests</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="cta">Contact</a></li>
       </ul>
     </nav>
-
-    <h1 style="text-transform: uppercase; letter-spacing: 0.5px;">KRISHNA KUMAR</h1>
-    <p>
-      Puttur, India • +91 7760443868 •
-      <a href="mailto:krishna189097@gmail.com">krishna189097@gmail.com</a> •
-      LinkedIn:
-      <a href="https://www.linkedin.com/in/krishnakumar" target="_blank" rel="noopener">Krishna Kumar</a> •
-      GitHub: <a href="https://github.com/krishna-36" target="_blank" rel="noopener">krishna-36</a>
-    </p>
-    <hr />
   </header>
 
-  <main id="content">
-    <section id="objective" aria-labelledby="objective-title">
-      <h2 id="objective-title">Objective</h2>
-      <p>
-        Seeking an internship or entry-level position to gain industry exposure and contribute to the
-        development of robust and scalable applications.
-      </p>
+  <main id="top">
+    <section class="hero reveal">
+      <div class="container">
+        <h1 class="gradient-text">KRISHNA KUMAR</h1>
+        <p class="sub">
+          Puttur, India • +91 7760443868 •
+          <a href="mailto:krishna189097@gmail.com">krishna189097@gmail.com</a> •
+          <a href="https://github.com/krishna-36" target="_blank" rel="noopener">github.com/krishna-36</a> •
+          <a href="https://www.linkedin.com/in/krishnakumar" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
     </section>
 
-    <section id="education" aria-labelledby="education-title">
-      <h2 id="education-title">Education</h2>
-      <ul>
-        <li>
-          <div>
-            <strong>Vivekananda College of Engineering and Technology, Puttur</strong>
-            <div>Bachelor Of Engineering, Computer Science</div>
-            <div>
+    <section id="objective" class="reveal">
+      <div class="container">
+        <h2>Objective</h2>
+        <p class="lead">
+          Seeking an internship or entry-level position to gain industry exposure and contribute to the
+          development of robust and scalable applications.
+        </p>
+      </div>
+    </section>
+
+    <section id="education" class="reveal">
+      <div class="container">
+        <h2>Education</h2>
+        <ul class="cards two-col">
+          <li class="card">
+            <h3>Vivekananda College of Engineering and Technology, Puttur</h3>
+            <p class="muted">Bachelor Of Engineering, Computer Science</p>
+            <div class="meta">
               <span>Dec 2022 – Jun 2026</span>
-              <span> • CGPA: 7.02/10.0</span>
+              <span>CGPA: 7.02/10.0</span>
             </div>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Indraprastha Pre-University College, Uppinangady</strong>
-            <div>Pre University (PCMC)</div>
-            <div>
+          </li>
+          <li class="card">
+            <h3>Indraprastha Pre-University College, Uppinangady</h3>
+            <p class="muted">Pre University (PCMC)</p>
+            <div class="meta">
               <span>Jun 2020 – Mar 2022</span>
-              <span> • Percentage: 77.5</span>
+              <span>Percentage: 77.5</span>
             </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="technical-strengths" class="reveal">
+      <div class="container">
+        <h2>Technical Strengths</h2>
+        <div class="stack">
+          <div class="stack-group">
+            <h4>Programming</h4>
+            <ul class="chips">
+              <li>Java (Intermediate)</li>
+              <li>C (Intermediate)</li>
+              <li>Python (Intermediate)</li>
+              <li>HTML</li>
+            </ul>
           </div>
-        </li>
-      </ul>
-    </section>
-
-    <section id="technical-strengths" aria-labelledby="technical-title">
-      <h2 id="technical-title">Technical Strengths</h2>
-
-      <ul>
-        <li>
-          <strong>Programming Languages:</strong>
-          Java (Intermediate), C (Intermediate), Python (Intermediate), HTML
-        </li>
-        <li>
-          <strong>Frameworks/Libraries:</strong>
-          React.js, Flask, Raylib (C++)
-        </li>
-        <li>
-          <strong>Web Development Tools:</strong>
-          VSCode
-        </li>
-        <li>
-          <strong>Version Control:</strong>
-          Git, GitHub
-        </li>
-        <li>
-          <strong>Cloud:</strong>
-          Google Cloud
-        </li>
-      </ul>
-    </section>
-
-    <section id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
-      <ul>
-        <li>
-          <div>
-            <strong>Video Summarizer</strong>
-            <span> — Mar 2024</span>
+          <div class="stack-group">
+            <h4>Frameworks/Libraries</h4>
+            <ul class="chips">
+              <li>React.js</li>
+              <li>Flask</li>
+              <li>Raylib (C++)</li>
+            </ul>
           </div>
-          <p>
-            Developed a Video Summarizer that generates the summary of the video.
-          </p>
-          <p>
-            <em>Tools Used:</em> Flask, OpenCV, Matplotlib, HTML, CSS, JavaScript
-          </p>
-          <p>
-            Repo: <a href="https://github.com/krishna-36/Video-Summarizer" target="_blank" rel="noopener">github.com/krishna-36/Video-Summarizer</a>
-          </p>
-        </li>
-
-        <li>
-          <div>
-            <strong>Knee Osteoarthritis (OA) Grade Detection (ML)</strong>
-            <span> — Mar 2024</span>
+          <div class="stack-group">
+            <h4>Tools</h4>
+            <ul class="chips">
+              <li>VSCode</li>
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>Google Cloud</li>
+            </ul>
           </div>
-          <p>
-            Developed a deep learning model to classify knee osteoarthritis into Normal, Mild, and Severe using X-ray images.
-          </p>
-          <p>
-            <em>Tools Used:</em> Python, TensorFlow/Keras, OpenCV, Matplotlib, Flask, HTML, CSS, JavaScript
-          </p>
-        </li>
-      </ul>
+        </div>
+      </div>
     </section>
 
-    <section id="certifications" aria-labelledby="certifications-title">
-      <h2 id="certifications-title">Certifications</h2>
-      <ul>
-        <li>Machine Learning Fundamentals — Infosys SpringBoard</li>
-        <li>Database and SQL — Infosys SpringBoard</li>
-      </ul>
+    <section id="projects" class="reveal">
+      <div class="container">
+        <h2>Projects</h2>
+        <ul class="cards two-col">
+          <li class="card">
+            <div class="card-head">
+              <h3>Video Summarizer</h3>
+              <span class="badge">Mar 2024</span>
+            </div>
+            <p>Developed a web app that generates a text summary of a video.</p>
+            <p class="muted"><strong>Tools:</strong> Flask, OpenCV, Matplotlib, HTML, CSS, JavaScript</p>
+            <div class="actions">
+              <a class="btn" href="https://github.com/krishna-36/Video-Summarizer" target="_blank" rel="noopener">View Repo</a>
+            </div>
+          </li>
+          <li class="card">
+            <div class="card-head">
+              <h3>Knee Osteoarthritis (OA) Grade Detection (ML)</h3>
+              <span class="badge">Mar 2024</span>
+            </div>
+            <p>Deep learning model to classify knee OA into Normal, Mild, and Severe using X‑ray images.</p>
+            <p class="muted"><strong>Tools:</strong> Python, TensorFlow/Keras, OpenCV, Matplotlib, Flask, HTML, CSS, JavaScript</p>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <section id="interests" aria-labelledby="interests-title">
-      <h2 id="interests-title">Interests</h2>
-      <p>Game Development, CyberSecurity, Linux</p>
+    <section id="certifications" class="reveal">
+      <div class="container">
+        <h2>Certifications</h2>
+        <ul class="list">
+          <li>Machine Learning Fundamentals — Infosys SpringBoard</li>
+          <li>Database and SQL — Infosys SpringBoard</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <p>
-        Email: <a href="mailto:krishna189097@gmail.com">krishna189097@gmail.com</a><br/>
-        Phone: +91 7760443868<br/>
-        GitHub: <a href="https://github.com/krishna-36" target="_blank" rel="noopener">github.com/krishna-36</a><br/>
-        LinkedIn: <a href="https://www.linkedin.com/in/krishnakumar" target="_blank" rel="noopener">Krishna Kumar</a>
-      </p>
+    <section id="interests" class="reveal">
+      <div class="container">
+        <h2>Interests</h2>
+        <p class="lead">Game Development, CyberSecurity, Linux</p>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+          <a class="contact-link" href="mailto:krishna189097@gmail.com">krishna189097@gmail.com</a>
+          <span class="contact-link">+91 7760443868</span>
+          <a class="contact-link" href="https://github.com/krishna-36" target="_blank" rel="noopener">github.com/krishna-36</a>
+          <a class="contact-link" href="https://www.linkedin.com/in/krishnakumar" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <hr />
-    <p>© 2024 Krishna Kumar</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2024 Krishna Kumar</p>
+    </div>
   </footer>
 </body>
 </html>
