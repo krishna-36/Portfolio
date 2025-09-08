@@ -169,3 +169,14 @@ h2::after {
   .gradient-text { animation: none; }
   .btn, .card, .nav-list a { transition: none; }
 }
+
+/* Avatar */
+.avatar-wrap { display: flex; justify-content: center; margin-bottom: 1rem; }
+.avatar {
+  width: 160px; height: 160px; border-radius: 50%;
+  object-fit: cover; background: #0b1220;
+  border: 2px solid var(--border); box-shadow: var(--shadow);
+}
+@media (max-width: 640px) {
+  .avatar { width: 128px; height: 128px; }
+}
